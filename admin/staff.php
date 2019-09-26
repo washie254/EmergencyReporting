@@ -63,8 +63,8 @@ unset($_SESSION['id']);
 
 				<li><a href="index.php">Home</a> </li>
 				<li><a href="emergencies.php">emergencies</a></li>
-				<li><a href="users.php" id="current">Users</a></li>
-				<li><a href="staff.php">Staff</a></li>
+                <li><a href="users.php">Users</a></li>
+				<li><a href="staff.php" id="current">Staff</a></li>
 				<li><a href="#">Reports</a></li>
 				<!-- <li><a href="blog.html">Blog</a></li> -->
 			</ul>
@@ -91,58 +91,26 @@ unset($_SESSION['id']);
 
 	<div class="container">
 		<div style="padding: 6px 12px; border: 1px solid #ccc;">
-			QUICK LINKS:   
-			<a href="#pending"><button type="button" class="btn btn-outline-secondary">Pending </button></a>
+			You can add and View Staff members Here
+			<!-- <a href="#pending"><button type="button" class="btn btn-outline-secondary">Pending </button></a>
 			<a href="#approved"><button type="button" class="btn btn-outline-secondary">Approved </button></a>
-			<a href="#rejected"><button type="button" class="btn btn-outline-secondary">Rejected </button></a>
+			<a href="#rejected"><button type="button" class="btn btn-outline-secondary">Rejected </button></a> -->
 		</div>
 	</div>
 	<br>
 	
 	<div class="container" id="pending">
 		<div style="padding: 6px 12px; border: 1px solid #ccc;">
-			<h3>Users and Reported Emergencies</h3> 
-			<p>A mapping of the users andd count of emergencies they have reported</p> 
+			<h3>Registered Staff Members</h3> 
+			<p>The following are the registered staff Members</p> 
 		</div>
 	</div>
 
 	<br>
 	<div class="container" id="rejected">
 		<div style="padding: 6px 12px; border: 1px solid #ccc;">
-			<h3>All Registred Users</h3> 
-			<p>The Following are all the users registered within the system </p> 
-			<table class="table table-bordered table-striped table-dark">
-				<thead>
-					<tr>
-					<th scope="col">U. Id</th>
-					<th scope="col">User Name</th>
-					<th scope="col">Other Names</th>
-					<th scope="col">email </th>
-					<th scope="col">Tel No </th>
-					<th scope="col">ID. No</th>
-					</tr>
-				</thead>
-				<tbody>
-					<!-- [ LOOP THE REGISTERED AGENTS ] -->
-					<?php
-
-					$sql = "SELECT * FROM userprofile ";
-					$result = mysqli_query($db, $sql);
-					while($row = mysqli_fetch_array($result, MYSQLI_NUM))
-					{	
-						$names = $row[3]." ".$row[4];
-						echo '<tr>';
-							echo '<td>'.$row[0].'</td> '; // E ID 
-							echo '<td>'.$row[1].'</td> '; //USER
-							echo '<td>'.$names.'</td> '; //Title
-							echo '<td>'.$row[2].'</td> '; //Title
-							echo '<td>'.$row[6].'</td> '; //Title
-							echo '<td>'.$row[5].'</td> '; //Title
-						echo '</tr>';
-					}
-					?>
-				</tbody>
-			</table>
+			<h3>Add Staff Members</h3> 
+			<p>Form for adding staff members will be here </p> 
 
 		</div>
 	</div>
